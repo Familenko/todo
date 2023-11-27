@@ -1,4 +1,4 @@
-from django.forms import ModelForm
+from django.forms import ModelForm, ModelMultipleChoiceField, CheckboxSelectMultiple
 
 from app.models import Task, Tag
 
@@ -6,7 +6,7 @@ from app.models import Task, Tag
 class TaskForm(ModelForm):
     class Meta:
         model = Task
-        fields = "__all__"
+        fields = ("content", "deadline", "tags")
 
 
 class TagForm(ModelForm):

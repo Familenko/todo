@@ -16,12 +16,12 @@ def complete_undo(request, pk):
         task.done = True
     task.save()
 
-    return HttpResponseRedirect(reverse_lazy("app:task-list", args=[pk]))
+    return HttpResponseRedirect(reverse_lazy("app:task-list"))
 
 
 class TaskListView(ListView):
     model = Task
-    template_name = "todo_app/task_list.html"
+    template_name = "app/task_list.html"
     context_object_name = "tasks"
     paginate_by = 10
 
@@ -45,7 +45,7 @@ class TaskDeleteView(DeleteView):
 
 class TagListView(ListView):
     model = Tag
-    template_name = "todo_app/tag_list.html"
+    template_name = "app/tag_list.html"
     context_object_name = "tags"
     paginate_by = 10
 
