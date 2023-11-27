@@ -24,6 +24,7 @@ class TaskListView(ListView):
     template_name = "app/task_list.html"
     context_object_name = "tasks"
     paginate_by = 10
+    queryset = Task.objects.prefetch_related("tags")
 
 
 class TaskCreateView(CreateView):
