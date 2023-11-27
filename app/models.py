@@ -18,7 +18,7 @@ class Task(models.Model):
         return self.content
 
     class Meta:
-        ordering = ["done", "datetime"]
+        ordering = ["done", "-datetime"]
 
 
 class Tag(models.Model):
